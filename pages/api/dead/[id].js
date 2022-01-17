@@ -13,13 +13,13 @@ export default function personHandler({ query: { id } }, res) {
     new Web3.providers.HttpProvider(provider),
   );
 
-getSupply()
-  async function getSupply() {
+
+
     const contract = new web3.eth.Contract(
       CC_ABI,
       '0xA7f5BEd28c596afEc2980C29874963A974461Cf1',
     )
-    const amount = await contract.methods.totalSupply().call()
+    const amount = 6
     const filtered = deadlarva.filter((p) => p.name === "Deadlarvaz # "+id)
     if (filtered.length > 0 && id<amount) {
       res.status(200).json(filtered[0])
@@ -27,8 +27,7 @@ getSupply()
       res.status(404).json({ message: `Larva with id: ${id} not found.` })
     }
 
-  }
-
+ 
 
 
 }

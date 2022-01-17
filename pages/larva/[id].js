@@ -26,6 +26,7 @@ export default function Larva() {
 
   if (error) return <div>{error.message}</div>
   if (!data) return <div></div>
+  
     return (JSON.stringify(data))
   
 }

@@ -17,7 +17,8 @@ const fetcher = async (url) => {
 
 export default function Larva() {
 
- 
+
+
   const { query } = useRouter()
   const { data, error } = useSWR(
     () => query.id && `/api/dead/${query.id}`,
@@ -25,8 +26,8 @@ export default function Larva() {
   )
 
   if (error) return <div>{error.message}</div>
-  if (!data) return <div></div>
+   if (!data) return null
   
     return (JSON.stringify(data))
-  
+ 
 }

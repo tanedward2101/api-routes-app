@@ -17,26 +17,7 @@ const fetcher = async (url) => {
 
 export default function Larva() {
 
-  const provider = `https://rinkeby.infura.io/v3/10475d80c3ba4b3d8f768b09dd3faafc`;
-  const [supply, setSupply] = useState(0);
-  const web3 = new Web3(
-    new Web3.providers.HttpProvider(provider),
-  );
-  useEffect(() => {
-    getSupply();
-  }, [])
-
-  async function getSupply() {
-    const contract = new web3.eth.Contract(
-      CC_ABI,
-      '0xA7f5BEd28c596afEc2980C29874963A974461Cf1',
-    )
-    const amount = await contract.methods.totalSupply().call()
-    setSupply(amount);
-
-  }
-
-
+ 
   const { query } = useRouter()
   const { data, error } = useSWR(
     () => query.id && `/api/dead/${query.id}`,

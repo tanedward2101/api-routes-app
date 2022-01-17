@@ -27,10 +27,7 @@ export default function Larva() {
 
   if (error) return <div>{error.message}</div>
    if (!data) return <div>Loading...</div>
-  if (query.id > supply) {
+ 
     return (<div></div>)
-  }
-  else {
-    return (JSON.stringify(data))
-  }
+
 }

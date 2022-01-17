@@ -20,6 +20,8 @@ getSupply()
       '0xA7f5BEd28c596afEc2980C29874963A974461Cf1',
     )
     const amount = await contract.methods.totalSupply().call()
+    console.log(amount)
+    
     const filtered = deadlarva.filter((p) => p.name === "Deadlarvaz # "+id)
     if (filtered.length > 0 && id>amount) {
       res.status(200).json(filtered[0])

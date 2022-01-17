@@ -1,4 +1,4 @@
-export const people = [
+export const deadlarva = [
   {
     id: '1',
     name: 'Luke Skywalker',
@@ -90,7 +90,7 @@ export const people = [
     gender: 'male',
   },
   {
-    id: '10',
+    id: '690',
     name: 'Obi-Wan Kenobi',
     height: '182',
     mass: '77',

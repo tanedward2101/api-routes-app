@@ -20,9 +20,9 @@ getSupply()
       '0xC3c95CCbed978Fd2915ffa1883f5EDe2590512E7',
     )
     const amount = await contract.methods.totalSupply().call()
-    
+    console.log(amount);
     const filtered = deadlarva.filter((p) => p.name === "Deadlarvaz # "+id)
-    if (filtered.length > 0 && id < amount) {
+    if (filtered.length > 0 && parseInt(id) < parseInt(amount)) {
       res.status(200).json(filtered[0])
     } else {
       res.status(404).json({ message: `Larva with id: ${id} not found.` })
